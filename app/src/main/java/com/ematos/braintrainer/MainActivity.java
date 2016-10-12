@@ -1,5 +1,6 @@
 package com.ematos.braintrainer;
 
+import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -108,6 +109,9 @@ public class MainActivity extends AppCompatActivity {
         finalScore.setText(String.format("%d/%d", userCorrect, userAnswers));
         userAnswers = 0;
         userCorrect = 0;
+
+        MediaPlayer player = MediaPlayer.create(getApplicationContext(), R.raw.beep);
+        player.start();
     }
 
     public void choose(View view) {
